@@ -1,0 +1,25 @@
+
+<header role="banner" class="header" id="header">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Pristine Hospital Management</a>
+      </div>
+      <ul class="nav navbar-nav" style="float:right" *ngIf="checkStatus2()">
+        <li><a routerLink="/Home">Home</a></li>
+        <li><a routerLink="/AdminLogin">Admin Login</a></li>
+        <li><a routerLink="/PatientListReadOnly">Patient Details</a></li>
+      </ul>
+      <ul class="nav navbar-nav" style="float:right">
+      <li><form *ngIf="checkStatus()" (submit)="logoutUser($event)">
+            <button type="button" class="btn"><a routerLink="PatientManupulation/addOrRemovePatient">Add/Remove Patient</a></button>
+            <button type="button" class="btn"><a routerLink="PatientManupulation/editPatientDetails">Edit Patient Details</a></button>
+            <button type="submit" class="btn btn-warning">Logout</button>
+        </form></li>
+      </ul>
+    </div>
+    
+  </nav>
+
+</header>

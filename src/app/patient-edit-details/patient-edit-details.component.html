@@ -1,0 +1,97 @@
+<!-- <table  align=center>
+ 
+    <div *ngIf="patient">
+      <h2>{{patient.name}} details</h2>
+      <div>
+        <tr>
+           <td><label>id: </label></td>
+           <td>{{patient.id}}</td>
+        </tr>
+      </div>
+  
+      <div>
+        <tr>
+              <td>  <label>name: </label></td>
+              <td>  <input [(ngModel)]="patient.name" placeholder="name" /> </td>
+        </tr>
+      </div>
+      <div>
+        <label>problem: </label>
+        <input [(ngModel)]="patient.problem" placeholder="problem" />
+      </div>
+      <div>
+          <label>age: </label>
+          <input [(ngModel)]="patient.age" placeholder="age" />
+        </div>
+      <button (click)="goBack()">Back</button>
+      <button (click)="save()">Save</button>
+    </div>
+</table> -->
+
+
+<div *ngIf="patient" class="edit-form">
+
+    <div class="col-2">
+      <label>
+        Name
+        <input placeholder="What is your full name?" id="name" name="name" tabindex="1" [(ngModel)]="patient.name">
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        ID
+        <input placeholder="ID?" id="company" name="company" tabindex="2" [(ngModel)]="patient.id" disabled>
+      </label>
+    </div>
+   
+    <div class="col-3">
+      <label>
+        Problem
+        <input placeholder="Problem you are facing?" id="phone" name="phone" tabindex="3" [(ngModel)]="patient.problem">
+      </label>
+    </div>
+    <div class="col-3">
+      <label>
+        age
+        <input placeholder="What is your age?" id="email" name="email" tabindex="4" [(ngModel)]="patient.age">
+      </label>
+    </div>
+    
+   
+    <div class="col-submit">
+      <button (click)="save()">Update Details</button>
+      <button (click)="goBack()">Back</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div><label>id: </label>{{selectedPatient.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedPatient.name" placeholder="name" />
+      </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button> -->
+  

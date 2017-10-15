@@ -1,0 +1,13 @@
+
+<div id="search-component" class="dropdown" style="text-align:center;">
+  <h4>Search Patient To Edit Details</h4>
+  <input align=center #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Patient Name"/>
+  <div>
+    <div *ngFor="let pat of patients | async"
+         (click)="gotoDetail(pat)" class="search-result" >
+      {{pat.name}}
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,87 @@
+
+<br>
+
+<app-patient-search></app-patient-search>
+
+<br>
+<h5 style="text-align:center;">(OR) <br> Click on the Patient</h5>
+
+<div *ngIf="selectedPatient" class="changeDetails" style="text-align:center;">
+  
+  <h2>
+    {{selectedPatient.name | uppercase}} is suffering from {{selectedPatient.problem}}
+  </h2>
+  <button pButton type="button" class="btn btn-success" (click)="gotoDetail()">Change Details</button>
+  
+</div>
+<br>
+  
+    <!-- <table border="1" align=center> -->
+      <!-- <tr>
+        <td>Patient Photo</td>
+        <td>Patient Name</td>
+        <td>Patient ID</td>
+        <td>Patient Problem</td>
+        <td>Patient Age</td>
+        
+      </tr>
+      <tr *ngFor="let pat of patients" (click)="onSelect(pat)"
+      [class.selected]="pat === selectedPatient">
+          <td><span><img src="{{pat.image}}"></span></td>
+          <td><span>{{pat.id}}</span></td>
+          <td><span>{{pat.name}}</span></td>
+          <td><span>{{pat.problem}}</span></td>
+          <td><span>{{pat.age}}</span></td>
+          
+      </tr> -->
+      
+      <!-- <table border="" align="center" cellspacing="2" cellpadding="1">
+          <tr *ngFor="let pat of patients" (click)="onSelect(pat)"
+          [class.selected]="pat === selectedPatient" align="center">
+            <td><h3 style="color:DodgerBlue;">{{pat.name}}</h3><div class="imageBox"><figure><img alt="Patient" src="{{pat.image}}" width="400px" height="440px"></figure></div><p style="color: SlateBlue ;"><b>{{pat.problem}}</b></p><p style="color:Indigo;">Patient ID: {{pat.id}} with age: {{pat.age}}</p></td>
+          </tr>
+      </table> -->
+
+      
+      
+  <!-- </table> -->
+
+<div class="main">
+
+  <div *ngFor="let pat of patients" (click)="onSelect(pat)"
+  [class.selected]="pat === selectedPatient" class="module hero">
+      
+        <div class="module-content">
+          <div  class="imageBox">
+            <figure>
+              <img src="{{pat.image}}" style="float:left;" class="img-responsive">
+            </figure></div>  
+            
+            <table align=center id="myTable">
+              <tr>
+                <td><span><b>Name: </b>{{pat.name}}</span></td>
+              </tr>  
+              <tr>
+                <td><span><b>Patient ID: {{pat.id}}</b></span></td>
+              </tr>  
+            <tr>  
+                <td><span><b>Problem: </b>{{pat.problem}}</span></td>
+            </tr>
+            <tr>
+                <td><span><b>Age: </b>{{pat.age}}</span></td>
+            </tr>
+          </table>
+        </div>
+        
+        </div>
+
+      
+      
+              
+</div>
+
+<br><br><br>
+  
+
+
+  

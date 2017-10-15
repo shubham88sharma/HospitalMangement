@@ -1,0 +1,44 @@
+/* header 
+{
+    background-color: #FFF0F0;
+    display:block;
+    overflow:hidden;
+}
+
+h1
+{
+    font-family: 'Lato', sans-serif;
+    float: left;
+    color: black;
+}
+nav 
+{
+    float: right;
+}
+.navigation-menu-container 
+{
+        padding: 10px;
+        border: 0;
+        font-size: 18px;
+        font-weight: normal;
+        font-family: 'Lato', sans-serif;
+        margin-right: 30px;
+        margin-top: 10px;
+}
+
+#navigation-menu li 
+{
+    display: inline-block;    
+    padding-right: 35px;
+} */
+
+header
+{
+    position: fixed;
+    margin: 0;
+    padding: 0; 
+    width: 100%;
+    height: 50px;
+    z-index: 1000000;
+    opacity: 0.9;
+}

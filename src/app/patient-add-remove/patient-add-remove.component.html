@@ -1,0 +1,169 @@
+<!-- <h2 align=center>Existing Patient(s) Detail</h2>
+
+<br>
+<div class="addOrRemove">
+  <label>Patient name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input #patientName />
+    <br><br>
+  <label>Patient Problem: &nbsp;</label><input #patientProblem />
+  <br><br>
+  <label>Patient Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input #patientAge />
+  <br><br>
+  <label>Patient Photo: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input #patientImage />
+  
+
+  <br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+  <button (click)="add(patientName.value,patientProblem.value,patientAge.value, patientImage.value ); patientName.value='';patientProblem.value='';patientAge.value=''" class="btn btn-success">
+    Add Patient
+  </button>
+  
+  <br><br><br><br>
+</div> -->
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">ADD A NEW PATIENT</div>
+    <div class="panel-body">
+<div class="inner contact">
+                <!-- Form Area -->
+                <div class="contact-form">
+                    <!-- Form -->
+                    <form id="contact-us">
+                        <!-- Left Inputs -->
+                        <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
+                            <!-- Name -->
+                            <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" #patientName />
+                            <!-- Email -->
+                            <input type="text" name="problem" id="mail" required="required" class="form" placeholder="Problem" #patientProblem />
+                            <!-- Subject -->
+                            <input type="text" name="age" id="age" required="required" class="form" placeholder="Age" #patientAge />
+                        </div><!-- End Left Inputs -->
+                        <!-- Right Inputs -->
+                        <div class="col-xs-6 wow animated slideInRight" data-wow-delay=".5s">
+                            <!-- Message -->
+                            <input name="message" id="message" class="form textarea"  placeholder="URL to patient's photo" #patientImage />
+                        </div><!-- End Right Inputs -->
+                        <!-- Bottom Submit -->
+                        <div class="relative fullwidth col-xs-12">
+                            <!-- Send Button -->
+                            <button  id="submit" name="submit" class="form-btn semibold" (click)="add(patientName.value,patientProblem.value,patientAge.value, patientImage.value ); patientName.value='';patientProblem.value='';patientAge.value='';patientImage.value=''" class="btn btn-success">Add Patient</button> 
+                        </div><!-- End Bottom Submit -->
+                        <!-- Clear -->
+                        <div class="clear"></div>
+                    </form>
+
+                    <!-- Your Mail Message -->
+                    <div class="mail-message-area">
+                        <!-- Message -->
+                        <div class="alert gray-bg mail-message not-visible-message">
+                            <strong>Thank You !</strong> Your email has been delivered.
+                        </div>
+                    </div>
+
+                </div><!-- End Contact Form Area -->
+            </div><!-- End Inner -->
+          </div>
+          </div>
+
+
+
+
+
+
+
+<!-- 
+<div id="wrapper" class="container">
+  
+
+  
+  <h1>Add a new Patient</h1>
+  <p>Add a patient on a regular basis according to your need. We aim to make the work more faster and thus increasing the overall efficiency of the Hospital Management.</p>
+  <p><strong>Send your personal feedback to:</strong> <a href="mailto:feedback@gmail.com">feedback@gmail.com</a></p>
+
+    
+      
+      <fieldset>
+      
+        <div class="form-group">
+          <div class="col-md-6">
+            <label class="control-label" for="nome">Name</label>
+            <input name="nome" class="form-control" placeholder="Patient Name" type="text" #patientName />
+            </div>
+          </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+              <label class="control-label" for="surname">Problem</label>
+              <input name="surname" class="form-control" placeholder="Problem" type="text" #patientProblem />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-6">
+              <label class="control-label" for="email">Age</label>
+              <input name="email" class="form-control" placeholder="Age" type="text" #patientAge>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-6">
+              <label class="control-label" for="district">Photo</label>
+              <input type="text" name="district" class="form-control" placeholder="link to patient photo" type="text" #patientImage>
+            </div>
+          </div>
+        
+          <br>
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-primary btn-lg btn-block info" (click)="add(patientName.value,patientProblem.value,patientAge.value, patientImage.value ); patientName.value='';patientProblem.value='';patientAge.value=''">Add Patient</button>
+            </div>
+          </div>     
+      </fieldset> 
+    
+</div>
+
+
+ -->
+
+
+ 
+<br><br>
+
+ <div class="panel panel-primary">
+    <div class="panel-heading">REMOVE AN EXISTING PATIENT
+
+        <input type="text" id="myInput" (keyup)="myFunction()" placeholder="Search for the Patient's ID.." title="Type in a name" >
+
+    </div>
+    
+    <div class="panel-body">
+
+ <div class="table-responsive"> 
+  <table border="1" align=center class="table table-hover" id="myTable">
+      <tr align=center>
+        
+          <td><b>Patient ID</b></td>
+          <td><b>Patient Name</b></td>
+          <td><b>Patient Problem</b></td>
+          <td><b>Patient Age</b></td>
+         
+          <td><b>Remove</b></td>
+        
+      </tr>
+      <tr *ngFor="let pat of patients" (click)="onSelect(pat)"
+        [class.selected]="pat === selectedPatient" align=center>
+      
+          <td><span>{{pat.id}}</span></td>
+          <td><span>{{pat.name}}</span></td>
+          <td><span>{{pat.problem}}</span></td>
+          <td><span>{{pat.age}}</span></td>
+        
+          <td><button class="btn btn-danger"
+            (click)="delete(pat)">Remove</button></td>
+      </tr>
+  </table>
+  </div>
+  </div>
+</div>
+  <br><br> 
